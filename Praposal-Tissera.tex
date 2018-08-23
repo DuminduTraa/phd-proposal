@@ -52,17 +52,6 @@ footskip=.25in]{geometry}
 
 
 \begin{document}
-	
-%\title{A Sample Thesis}
-%\vspace{10mm}
-%\author{Dannangoda Gamage Kanishka Madusanka}
-%\vspace{10mm}
-%{(148039D)}
-%\vspace{10mm}
-%\date{January 2009}
-%\maketitle
-
-
 \begin{titlepage}
 	\begin{center}
 		\vspace*{5cm}
@@ -79,7 +68,7 @@ footskip=.25in]{geometry}
 		
 		\vspace{0.5cm}
 		
-		(XXXXXXX)
+		(188013F)
 		\vfill
 		
 		\normalsize
@@ -190,12 +179,11 @@ To be filled
 
 \section{Autonomous Navigation Architectures}
 
-Introducing autonomous navigation for various robotic platforms and unmanned vehicles is one of the major developing and interesting area in the field of robotics and Artificial Intelligence (AI). 
 
 \section{Reinforcement Learning for Autonomous Navigation}
-Most of the trainable adaptive intelligent control architectures of various robotic platforms have been designed based on supervised learning techniques such as Learning from Demonstration (LfD)\cite{R38}. In supervised learning problems the agent is directly trained by using a set of examples with correct predictions which is considered as a supervisor or teacher and it tries to generalize the solution for unseen circumstances \cite{R03}. Typically, the demonstrator for such control systems will be a linear or nonlinear control law, hand written control policy, or it may be a human expert \cite{R05} \cite{R23}.  However, in some cases the role of a demonstrator might not be feasible to implement using above techniques. In such a situation it may be might be more appropriate to explore the optimal control strategies by means of on-line methods like reinforcement learning since it derives control rules as functions of the states while evaluating the overall behavior of a platform \cite{R38}.
+
 \subsection{Reinforcement Learning Framework}
-Reinforcement Learning (RL) provides a powerful framework and a set of tools for robotics since it enables a robot to explore and learn to execute actions in a optimal way,  by interacting with the environment using a trial and error approach \cite{R03}. Typically a RL agent observes current state $s_t$ and performs an action $a_t$ at a particular time-step t while following a particular policy $\pi$. Thereafter the environment accepts that action and generates a new state $s_{t+1}$ and a  reward $r_{t+1}$. This reward is a scalar value which represents the feedback for the action played and it measures the performance of a single time step with respect to the action performed. Then the agent accepts the reward and take another action by observing the newly generates state and this process will be continued until the agent meets a termination state as illustrated in the. simply an RL agent is learning how to map situations to actions so that to maximize the expected numerical reward signals. Also the agent is not aware of taking the action in an optimal way, but instead it must discover a mechanism to select which actions to be played in order to maximize the sum of discounted future rewards, by following a trial and error approach \cite{R37}.
+
 %\begin{figure}[h]
 %\begin{center}
 %  \includegraphics[scale = 0.5]{Figure01.png}
@@ -206,26 +194,21 @@ Reinforcement Learning (RL) provides a powerful framework and a set of tools for
 
 \subsection{Reinforcement Learning in the Context of Robotics}
 
-one of the major objectives of developing intelligent robotic platforms is to solve various complex tasks by in-cooperating continuous, high-dimensional, unprocessed, sensory input data and controling continuous, high-dimensional action-space \cite{R06}. When the domain of reinforcement learning is considered, the difficulty of applying RL techniques on continuous high-dimensional state and action spaces can be identified as one of the major disadvantages. In the context of autonomous navigation most of the navigation problems are described in terms of continuous and high dimensional state and action spaces or large discreate state action spaces. In robotics it is not possible to observe exact state of the robot since the states are not completely observable and noise-free \cite{R03}. Therefore the learner might not be able to identify its state precisely and some states with considerable difference will be recognized as similar states \cite{R03}. Thus, most of the reinforcement learning problems in robotics are usually modeled as partially observed \cite{R03}.
 
 \subsection{Deep Reinforcement Learning}
 
-In general the applicability of reinforcement learning on the field of robotics has limited to domains \cite{R40} \cite{R41} \cite{R42} where the useful features can be handcrafted or to problems with fully observed low-dimensional state spaces \cite{R04}. The main reason for the above issue is that it is impractical to visit or represent large state and action spaces (continuous or discretised) which can be found in most of the real-world robotics problems \cite{R03}. In this setting, the function approximation techniques can be integrated to reinforcement learning algorithms \cite{R04} \cite{R04} \cite{R06} \cite{R15} in order to generalize value functions based on samples collected while interacting with the environment \cite{R03}. 
 
-Function approximation \cite{R43} is set of  mathematical and statistical methods of computing a function which can be used to represent a particular set of data exactly or explicitly. Many research groups have taken various efforts to apply Deep Neural Networks (DNN)\cite{R40} \cite{R44} \cite{R45} \cite{R46} \cite{R47} for reinforcement learning as  a global non-linear value-function approximator \cite{R03}.The most significant attribute of deep learning is that deep neural networks are capable of extracting compact low dimensional representations of high-dimensional data automatically. However, employing non-linear function appropriators such as neural networks to estimate action-value function (Q-function) reinforcement learning was known to be fundamantally unstable or even to diverge \cite{R04} \cite{R06} due to several reasons such as correlation present in observation data and correlation between action-values (Q-value) and target values \textit{etc}. 
 
-Mnih \textit{et al.} \cite{R04} in 2015 developed a novel reinforcement learning agent known as deep Q-network (DQN) which can learn successful policies directly from high-dimensional state space. They ware able to run-over the above mentioned issues by introducing the concept of experience replay \cite{R48} \cite{R49} and by using iterative update for the action-value function and updating the target function periodically. This experiment can be recognized as a major breakthrough in the reinforcement setting where the deep neural networks were employed successfully in implementation of reinforcement learning algorithms to address the difficulties in handling large high-dimensional state space. These discoveries guide us with a new approach to penetrate the blockade that we had in addressing real-world complex robotics tasks like navigation problems, with reinforcement learning methods.
 
-Among the resent successful stories in the field of deep reinforcement learning (DRL), the DQN agent developed by Mnih \textit{et al.} \cite{R04} can be considered as the kick-starting revolution of DRL \cite{R50} which could learn to play a range of classical Atari 2600 video games directly from raw image pixels, at a level of comparable to professional human players. Another outstanding effort in the field of DRL is the development of hybrid DRL agent \cite{R52} (a combination of supervised learning and reinforcement learning algorithms) known as AlphaGo \cite{R51} which could manage to defeat a world champion in the game of GO \cite{R50}.However these advancements have motivated to apply DRL algorithms to wide range of robotics problems such as learning control strategies from camera inputs \cite{R53} \cite{R54} and developing adaptive robotics agents to perform various complex navigation tasks \cite{R08} \cite{R18} \cite{R23} \cite{R29} \textit{etc.}
  
 \subsection{Reinforcement Learning with Continuous state and action spaces }
 
-One of the primary goal of robotics is to formulate adaptable, intelligent robotics systems which can solve sophisticated real world tasks by perceiving the environment with the support of unprocessed, high-dimensional sensory data \cite{R06}. The DQN algorithm proposed by Mnih \textit{et al.} \cite{R04} is capable of handling problems with high-dimensional observation space in both continuous or discrete domains very effectively and efficiently. However one limitation of the DQN algorithm is it can only admit to problems with low-dimensional, discrete action space \cite{R06} \cite{R19}\cite{R50}. Yet most of the real world physical control problems have formulated with continuous high-dimensional action domains where the DQN algorithms cannot be directly applied. The main reason for this shortcoming is that the DQN algorithm highly relies on finding the action corresponding to the highest action-value at a given instant (see the appendix A), which is computationally expensive or unrealistic to calculate in most of the cases. On the other hand discretization of actions will be sufficient only for problems with low number of degree of freedoms and low number of discrete steps. Otherwise it creates many complications in a setting where a fine control of actions are demanding. In addition to that it limits the ability to explore the whole action space efficiently.
+
 
 
 The advancement in fields of Deep Learning (DL) and Reinforcement Learning (RL) has dramatically improved the perforce of DQN algorithms while overcoming above described ingrained weaknesses found in deep Q-network. Thimothy \textit{et al.} \cite{R06} has proposed a model-free, off-policy actor-critic algorithm termed as Deep Deterministic Policy Gradient (DDPG) algorithm (see the appendix B), by employing deep neural network as function appropriator that can learn competitive policies in high-dimensional continuous action space. Their approach is based on Deterministic Policy Gradient (DPG) algorithm \cite{R14} and it is a combination of actor-critic approach\cite{R55} and outstanding features of DQN \cite{R04} \cite{R06}. 
 
-In 2016 Mnih \textit{et al.} introduced a new paradigm for the reinforcement learning framework known as Asynchronous Deep Reinforcement Learning (ADRL)\cite{R20}.Rather than applying experience replay as proposed in DQN, in asynchronous methods multiple agent have been executed parallelly and asynchronously. Proposed asynchronous algorithms have exhibited better results in less time using less resources compare to distributed methods \cite{R56} and the asynchronous advantage actor-critic (A3C) algorithm (see appendix E) was the mostly outperformed algorithm compare to other suggested methods (see appendix C and D). In 2017 Lei  \textit{et al.} \cite{R07} fused asynchronous RL methods with  deep deterministic policy gradient method \cite{R57} \cite{R58} \cite{R59} and developed a novel algorithm called Asynchronous Deep Deterministic Policy Gradient(ADDPG) and applied it to develop mapless navigation system in continuous domain. These asynchronous methods can be used to train RL agents to solve complex problems with continuous observation and action spaces, effectively and efficiently in terms of training time and resources.
+
 
 \subsection{XXXXXXXXX}
 
@@ -362,6 +345,7 @@ Deep Deterministic Policy Gradient (DDPG) Algorithm proposed by Thimothy \textit
 \chapter{Asynchronous n-Step Q-Learning Algorithm}
 
 \chapter{Asynchronous Advantage Actor-Critic Algorithm}
+
 \end{appendices}
 
 \end{document}
