@@ -1,35 +1,27 @@
 
 \begin{enumerate}
 %1	
-\item Carrying out comprehensive literature review as covering following areas to develop a suitable architecture for autonomous navigation of mobile robots.
+\item Critically review the literature with regards to following topics in order to identify and justify the problem statement.
 	\begin{itemize}
-		\item Conventional autonomous navigation methods for mobile robot
-		\item Artificial Intelligence (AI)
-		\item Artificial Neural Networks (ANN)\cite{R09}
-		\item Cognitive architectures
-		\item Memory architectures for autonomous navigation
-		\item Deep Reinforcement Learning (DRL) in robotics 
-		\item Knowledge transfer methods in robotics
-
+		\item Computer Vision and Deep Learning
+		\item Training deep neural networks
+		\item Vision Based Navigation
 	\end{itemize}
 	
 %2
-\item Implementing an adaptable Deep Reinforcement Learning (DRL) based virtual robot agent which is capable of performing different navigation tasks such as path planing,target reaching and obstacle avoidance \textit{etc}, and simulating it in virtual Robotic Experiment Platform (V-rep)\cite{R60}. The purpose of implementing this agent is to get a better understanding of training based navigation problems and to study about various training methods.
+\item Develop individual tools to generate contextualized feature maps from input images where the models are dynamically adaptive to the nature of input. Initially these models will be trained with pixel wise human annotated outputs such as road/lane detection, drivable area detection etc. with the help of supervised learning
 
 %3
-\item Studying about Knowledge transferring and incorporating the existing knowledge to develop efficient and safe training methods.
+\item  Extend the system to extract temporal information using Recurrent Neural Networks(RNN). Input frames are fed to the models developed in the previous stage which outputs feature maps to be fed in to RNN in each time step.
 
 %4
-\item Studying about existing cognitive architectures and developing a common architecture to overcome the platform dependency problem.
+\item Handover to the model, the responsibility of training feature map extractors from merely input frame sequence and corresponding expected navigation command, say steering direction and desired velocity. Remove pixel-wise annotated expected output maps where the only output system can observe is the navigation commands. Models will be trained with pre-recorded videos along with navigation commands as output in a supervised manner.
 
 %5
-\item Developing an agent to run on the developed architecture and evaluate the performance of it using two quad-rotor platforms.
+\item Study the conditionally generated feature maps in order to identify the features triggered by the input to make sure relevant details are extracted from the content of input to the model. Make necessary changes to the models by adjusting the network architectures to make sure that intended objectives are achieved by the networks 
 
 %6
-\item The successful operation of proposed architecture will be demonstrated using two quad-rotor platforms with a vision system. One of the quad-rotor will be controlled manually and that will be used to train the second quad-rotor. The second quad-rotor should be able to learn the platform behavior by itself and follow the movement of the manually controlled quad-rotor
-
-%7
-\item To demonstrate the platform independent learning ability, some of the controlled parameters of second quad rotor will be changed after the first training and the ability of mimic the movement of  manually controlled quad-rotor with the same performance, will be evaluated.
+\item Impose reinforcement learning and adversarial training on top of existing supervised learning in order to learn from real world navigation in real time.
 
 
 
